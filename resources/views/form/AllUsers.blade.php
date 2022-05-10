@@ -27,7 +27,7 @@
                         <div class="card-header border-0 py-5">
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label font-weight-bolder text-dark">Boutique Users</span>
-                                <span class="text-muted mt-3 font-weight-bold font-size-sm">More than 40+  members</span>
+                                <span class="text-muted mt-3 font-weight-bold font-size-sm">More than 2+  members</span>
                             </h3>
                             <div class="card-toolbar">
                                 <a href="{{ url('form/users/create') }}" class="btn btn-primary font-weight-bolder font-size-sm"><i class="flaticon2-plus"></i>New Users</a>
@@ -99,7 +99,7 @@
                                                 </td>
                                                 <td>
                                                     <span
-                                                        class="text-dark-75 font-weight-bolder d-block font-size-lg">{{ $user->password }}</span>
+                                                        class="text-dark-75 font-weight-bolder d-block font-size-lg">{{ $user->email }}</span>
                                                     <span class="text-muted font-weight-bold"> </span>
                                                 </td>
                                                 <td>
@@ -175,5 +175,6 @@
 @endsection
 @section('css')
     <link href="./assets/vendors/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="./css/profile.css" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/profile.css')}}" rel="stylesheet" type="text/css" />
+
 @endsection

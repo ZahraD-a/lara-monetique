@@ -130,7 +130,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
         <div class="kt-header-mobile__logo">
             <a href="/main/successlogin">
-                <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" />
+                {{-- <img alt="Logo" src="{{ asset('assets/media/logos/logo-light.png') }}" /> --}}
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -154,7 +154,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
                         <a href="/main/successlogin">
-                            <img alt="Logo" src="assets/media/logos/logo-light.png" />
+                            {{-- <img alt="Logo" src="assets/media/logos/logo-light.png" /> --}}
                         </a>
                     </div>
                     <div class="kt-aside__brand-tools">
@@ -223,67 +223,34 @@ License: You must have a valid license purchased only from themeforest(the above
                             </li>
                             <li class="kt-menu__item " aria-haspopup="true">
 
-                                <a href="{{ url('admin/home') }}" class="kt-menu__link ">
+                                <a href="{{ url('main/successlogin') }}" class="kt-menu__link ">
                                       <span class="kt-menu__link-icon">
                                         <i class="  icon-2x text-muted font-weight-bold"></i>
-                                    </span><span class="kt-menu__link-text">Dashboard</span></a>
+                                    </span><span class="kt-menu__link-text">User Dashboard</span></a>
                             </li>
 
                             <li class="kt-menu__item " aria-haspopup="true">
 
-                                @role('admin')
-                                <a href="{{ url('admin/user') }}" class="kt-menu__link ">
-                                     @else
                                 <a href="{{ url('user/show') }}" class="kt-menu__link ">
-                                @endrole
+
 
                                     <span class="kt-menu__link-icon">
                                         <i class="flaticon-network icon-2x text-muted font-weight-bold"></i>
-                                    </span><span class="kt-menu__link-text"> ALL user</span></a>
+                                    </span><span class="kt-menu__link-text"> ALL users</span></a>
                             </li>
 
 
                             <li class="kt-menu__item " aria-haspopup="true">
-                                @role('admin')
-                                <a href="{{ url('admin/profile') }}" class="kt-menu__link ">
-                                     @else
-                                <a href="{{ url('user/profile') }}" class="kt-menu__link ">
-                                @endrole
+
+                                <a href="user/profile" class="kt-menu__link ">
+
 
 
                                     <span class="kt-menu__link-icon">
                                         <i class="fa fa-user-circle" aria-hidden="true"></i>
                                     </span><span class="kt-menu__link-text"> Profile</span></a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                {{-- @role('admin') --}}
-                                <a href="{{ url('/admin/boutique') }}" class="kt-menu__link ">
-                                    {{-- @else
-                                    <a href="{{ url('user/profile') }}" class="kt-menu__link ">
-                                        @endrole --}}
-                                    <span class="kt-menu__link-icon">
-                                        <i class="flaticon-network icon-2x text-muted font-weight-bold"></i>
 
-                                    </span><span class="kt-menu__link-text"> Boutiques</span></a>
-                                    <div class="menu-submenu">
-                                        <i class="menu-arrow"></i>
-
-                                    </div>
-                            </li>
-                            {{-- <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('form/users') }}" class="kt-menu__link ">
-
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                                    </span><span class="kt-menu__link-text"> Order Detail</span></a>
-                            </li> --}}
-                            {{-- <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ url('admin/transa') }}" class="kt-menu__link ">
-
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-id-card" aria-hidden="true"></i>
-                                    </span><span class="kt-menu__link-text"> Transaction</span></a>
-                            </li> --}}
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ url('form/commande') }}" class="kt-menu__link ">
 
@@ -291,13 +258,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <i class="fa fa-credit-card" aria-hidden="true"></i>
                                     </span><span class="kt-menu__link-text"> Commandes</span></a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ URL('etudiant/list') }}" class="kt-menu__link ">
 
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    </span><span class="kt-menu__link-text"> Etudiants</span></a>
-                            </li>
 
                             <li class="kt-menu__item ">
                                 <a href="{{ url('form/new') }}"   class="kt-menu__link ">
@@ -307,13 +268,8 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                     </span><span class="kt-menu__link-text"> Articles</span></a>
                             </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('boutique-factures') }}" class="kt-menu__link ">
 
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    </span><span class="kt-menu__link-text"> Factures </span></a>
-                            </li>
+
 
                             {{-- <li class="kt-menu__section ">
 									<h4 class="kt-menu__section-text">Transaction</h4>

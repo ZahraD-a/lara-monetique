@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="kt-widget19__action">
-                <a href="#" class="btn btn-sm btn-label-brand btn-bold">Read More...</a>
+                <a   class="btn btn-sm btn-label-brand btn-bold">Read More...</a>
             </div>
         </div>
     </div>

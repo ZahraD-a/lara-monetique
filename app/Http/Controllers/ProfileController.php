@@ -14,8 +14,9 @@ class ProfileController extends Controller
 {
     public function __construct()
 {
-    $this->middleware('role_or_permission:admin')->only(['profileadmin']);
-    $this->middleware('role_or_permission:user')->only(['index']);
+    // $this->middleware('role_or_permission:user')->only(['index']);
+    // $this->middleware('role_or_permission:admin')->only(['profileadmin']);
+
 
 }
 

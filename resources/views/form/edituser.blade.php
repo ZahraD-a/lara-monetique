@@ -110,3 +110,8 @@
         </div>
     </div>
 @endsection
+@section('css')
+    <link href="{{ asset('assets/vendors/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/profile.css')}}" rel="stylesheet" type="text/css" />
+
+@endsection

@@ -21,7 +21,7 @@ class UserbController extends Controller
     public function show()
     {
         $users = DB::select('select * from users
-                             where type="user_boutique "');// errors not  found if you don't dclare this users
+                             where type="user boutique "');// errors not  found if you don't dclare this users
         return view('form.AllUsers', ['users' => $users]);
 
 
@@ -43,7 +43,7 @@ class UserbController extends Controller
     {
         $user = new User() ;
         $user->name = $request->input('name') ;
-        $user->type =  value('user_boutique') ;
+        $user->type =  value('user boutique') ;
         $user->password = $request->input('password') ;
         $user->email = $request->input('email') ;
         // if ($request->hasfile('image')){
