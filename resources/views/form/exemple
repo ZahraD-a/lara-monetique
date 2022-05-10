@@ -1,0 +1,192 @@
+<div class="container">
+    <div class="kt-portlet kt-portlet--height-fluid">
+        <div class="kt-portlet__head">
+            <div class="kt-portlet__head-label">
+                <h3 class="kt-portlet__head-title">
+                    HISTORY
+                </h3>
+            </div>
+
+        </div>
+        <div class="kt-portlet__body">
+            <div class="kt-scroll" data-scroll="true" data-height="380" data-mobile-height="300">
+
+                <!--Begin::Timeline 3 -->
+                <div class="kt-timeline-v2">
+                    <div class="kt-timeline-v2__items  kt-padding-top-25 kt-padding-bottom-30">
+                        <div class="kt-timeline-v2__item">
+                            <span class="kt-timeline-v2__item-time"> 2022</span>
+                            <div class="kt-timeline-v2__item-cricle">
+                                <i class="fa fa-genderless kt-font-danger"></i>
+                            </div>
+                            <div class="kt-timeline-v2__item-text  kt-padding-top-5">
+                                {{-- User: {{ $commande->boutique->user_id }}<br> --}}
+                                Reference Cmd: {{ $commande->reference }}<br>
+                                Etudiant: {{ $commande->etudiant->nom }}<br>
+                                Status: {{ $commande->status }}
+
+                            </div>
+
+                        </div>
+
+                        @foreach ($commande->historique as $historique)
+                        <div class="kt-timeline-v2__item">
+                            {{-- <span class="kt-timeline-v2__item-time">User: {{$historique->users}}</span> --}}
+                            <div class="kt-timeline-v2__item-cricle">
+                                <i class="fa fa-genderless kt-font-danger"></i>
+                            </div>
+                            <div class="kt-timeline-v2__item-text  kt-padding-top-5">
+                                {{-- User: {{ $commande->boutique->user_id }}<br> --}}
+                                User: {{ $historique->user->name }}<br>
+                                Status Command: {{ $historique->status }}<br>
+                                Date: {{ $historique->created_at }}<br>
+                                {{-- Status: {{ $historique->status }} --}}
+
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!--End::Timeline 3 -->
+            </div>
+        </div>
+    </div>
+    <!--begin::Page Layout-->
+    {{-- <div class="d-flex flex-row"> --}}
+        <div class="flex-row-fluid ml-lg-8">
+            <!--begin::Card-->
+            <div class="card card-custom gutter-b">
+
+                <div class="card-body p-0">
+                    <!-- begin: Invoice-->
+                    <!-- begin: Invoice header-->
+                    <div class="row justify-content-center py-8 px-8 py-md-27 px-md-0">
+                        <div class="col-md-10">
+                            <div class="d-flex justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
+                                <h1 class="display-7 font-weight-boldest mb-6">Commande <br /> Details</h1>
+                                <div class="d-flex flex-column align-items-md-end px-0">
+                                    <!--begin::Logo-->
+                                    <a href="#" class="mb-5">
+                                        <img src="/metronic/theme/html/demo1/dist/assets/media/logos/logo-dark.png"
+                                            alt="" />
+                                    </a>
+                                    <!--end::Logo-->
+                                    <span class="d-flex flex-column align-items-md-end opacity-70">
+                                        <span>{{ $commande->etudiant->Id_compte }}</span>
+                                        <span> Mc</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="border-bottom w-100"></div>
+                            <div class="d-flex justify-content-between pt-6">
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Commande DATE</span>
+                                    <span class="opacity-70">{{ $commande->created_at }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Commande Ref.</span>
+                                    <span class="opacity-70">{{ $commande->reference }}</span>
+                                </div>
+                                <div class="d-flex flex-column flex-root">
+                                    <span class="font-weight-bolder mb-2">Delivred to student.</span>
+                                    <span class="opacity-70">{{ $commande->etudiant->prenom }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- end: Invoice header-->
+                    <!-- begin: Invoice body-->
+                    <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+                        <div class="col-md-10">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="pl-0 font-weight-bold text-muted text-uppercase">Commande Items
+                                            </th>
+                                            <th class="text-right font-weight-bold text-muted text-uppercase">Quantite
+                                            </th>
+                                            <th class="text-right font-weight-bold text-muted text-uppercase">Unit Price
+                                            </th>
+                                            <th class="text-right pr-0 font-weight-bold text-muted text-uppercase">Total
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{-- for each commande display its products --}}
+                                        @foreach ($commande->produits as $produit)
+                                        <tr class="font-weight-boldest">
+                                            <td class="border-0 pl-0 pt-7 d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-40 flex-shrink-0 mr-4 bg-light">
+                                                    <div class="symbol-label"
+                                                        style="background-image: url('/metronic/theme/html/demo1/dist/assets/media/products/11.png')">
+                                                    </div>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                {{ $produit->name }}
+                                            </td>
+                                            <td class="text-right pt-7 align-middle">{{ $produit->pivot->quantite }}
+                                            </td>
+                                            <td class="text-right pt-7 align-middle">{{ $produit->prix }}</td>
+                                            <td class="text-primary pr-0 pt-7 text-right align-middle">
+                                                {{ $produit->pivot->quantite * $produit->prix }}</td>
+                                        </tr>
+                                        {{-- <tr class="font-weight-boldest border-bottom-0">
+                                            <td class="border-top-0 pl-0 py-4 d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-40 flex-shrink-0 mr-4 bg-light">
+                                                    <div class="symbol-label"
+                                                        style="background-image: url('/metronic/theme/html/demo1/dist/assets/media/products/2.png')">
+                                                    </div>
+                                                </div>
+                                                <!--end::Symbol-->
+                                                Juice avocat
+                                            </td>
+                                            <td class="border-top-0 text-right py-4 align-middle">1</td>
+                                            <td class="border-top-0 text-right py-4 align-middle">49.00</td>
+                                            <td class="text-primary border-top-0 pr-0 py-4 text-right align-middle">
+                                                49.00</td>
+                                        </tr> --}}
+                                        <tr class="font-weight-boldest border-bottom-0">
+                                            <td class="border-top-0 pl-0 py-4 d-flex align-items-center">
+                                                <!--begin::Symbol-->
+                                                <div class="symbol symbol-40 flex-shrink-0 mr-4 bg-light">
+                                                    <div class="symbol-label"
+                                                        style="background-image: url('/metronic/theme/html/demo1/dist/assets/media/products/1.png')">
+                                                    </div>
+                                                </div>
+                                                <!--end::Symbol-->
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: Invoice body-->
+                    <!-- begin: Invoice footer-->
+
+                    <!-- end: Invoice footer-->
+                    <!-- begin: Invoice action-->
+                    <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
+                        <div class="col-md-10">
+                            <div class="d-flex justify-content-between">
+                                <button type="button" class="btn btn-light-primary font-weight-bold"
+                                    onclick="window.print();"> </button>
+                                <button type="button" class="btn btn-primary font-weight-bold"
+                                    onclick="window.print();">Print Commande Details</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end: Invoice action-->
+                    <!-- end: Invoice-->
+                </div>
+            </div>
+            <!--end::Card-->
+        </div>
+        {{--
+    </div> --}}
+</div>
