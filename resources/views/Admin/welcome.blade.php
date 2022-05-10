@@ -149,7 +149,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($etudiants as $student)
+                                @foreach ($etudiants as $student)
                                     <tr>
                                         <td class="pl-0 py-6">
                                             <label class="checkbox checkbox-lg checkbox-inline">
@@ -200,7 +200,7 @@
 
 
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

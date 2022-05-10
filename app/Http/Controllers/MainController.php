@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Validator;
 use Auth;
+use Validator;
+use App\Models\Produit;
+use App\Models\Etudiant;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -28,9 +30,11 @@ class MainController extends Controller
      {
         if(auth()->user()->type=="admin superieur"){
 
-            return view('Admin.welcome');
+            $etudiants = Etudiant::All();
+            return view('Admin.welcome', compact('etudiants'));
         }else{
-            return view('home');
+            $produits = Produit::All();
+            return view('home', compact('produits'));
 
          }
          }
@@ -43,7 +47,8 @@ class MainController extends Controller
 
     function successlogin()
     {
-     return view('home');
+        $produits = Produit::All();
+        return view('home', compact('produits'));
     }
 
     function logout()

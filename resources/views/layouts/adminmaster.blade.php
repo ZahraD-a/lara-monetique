@@ -485,7 +485,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
                                 <!--begin: Navigation -->
                                 <div class="kt-notification">
-                                    <a href="{{ url('form/profile') }}" class="kt-notification__item">
+                                    <a href="{{ url('admin/profile') }}" class="kt-notification__item">
                                         <div class="kt-notification__item-icon">
                                             <i class="flaticon2-calendar-3 kt-font-success"></i>
                                         </div>

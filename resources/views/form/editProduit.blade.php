@@ -91,7 +91,7 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="submit" class="btn btn-sm btn-info" value="Update">
+                                        <input href="{{ url('form/new') }}" type="submit" class="btn btn-sm btn-info" value="Update">
                                         <input type="submit" class="btn btn-sm btn-warning" value="Reset"
                                             onclick="resetForm();">
                                     </div>
