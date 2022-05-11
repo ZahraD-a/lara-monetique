@@ -99,7 +99,8 @@
                                                                 <div class="row justify-content-center py-8 px-8 py-md-27 px-md-0">
                                                                     <div class="col-md-10">
                                                                         <div class="d-flex justify-content-between pb-10 pb-md-20 flex-column flex-md-row">
-                                                                            <h1 class="display-4 font-weight-boldest mb-10">ORDER DETAILS</h1>
+                                                                            <h1 class="display-4 font-weight-boldest mb-10">                                                                                        <th class="pl-0 font-weight-bold text-muted text-uppercase">Commande Items</th>
+                                                                            </h1>
                                                                             <div class="d-flex flex-column align-items-md-end px-0">
                                                                                 <!--begin::Logo-->
                                                                                 <a href="#" class="mb-5">
@@ -138,7 +139,7 @@
                                                                             <table class="table">
                                                                                 <thead>
                                                                                     <tr>
-                                                                                        <th class="pl-0 font-weight-bold text-muted text-uppercase">Ordered Items</th>
+                                                                                        <th class="pl-0 font-weight-bold text-muted text-uppercase">Commande Items</th>
                                                                                         <th class="text-right font-weight-bold text-muted text-uppercase">Qty</th>
                                                                                         <th class="text-right font-weight-bold text-muted text-uppercase">Unit Price</th>
                                                                                         <th class="text-right pr-0 font-weight-bold text-muted text-uppercase">Amount</th>
@@ -184,7 +185,18 @@
                                                                                         <td>{{ $commande->status }} </td>
                                                                                         <td> </td>
                                                                                         <td> </td>
-                                                                                        <td class="text-primary font-size-h3 font-weight-boldest text-right">789.00 Dh</td>
+                                                                                        <td class="text-primary font-size-h3 font-weight-boldest text-right">
+                                                                                            <?php
+                                                                                            $sum = 0;
+                                                                                            ?>
+                                                                                            @foreach ($commande->produits as $produit)
+                                                                                                <?php
+                                                                                                $sum += $produit->prix *$produit->pivot->quantite;
+                                                                                                ?>
+                                                                                            @endforeach
+                                                                                            <span class="text-primary font-size-h5 font-weight-bolder ml-0"> {{ $sum }}</span>
+
+                                                                                        </td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
@@ -196,8 +208,7 @@
                                                                 <div class="row justify-content-center py-8 px-8 py-md-10 px-md-0">
                                                                     <div class="col-md-10">
                                                                         <div class="d-flex justify-content-between">
-                                                                            <button type="button" class="btn btn-light-primary font-weight-bold" onclick="window.print();">Download Order Details</button>
-                                                                            <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print Order Details</button>
+                                                                             <button type="button" class="btn btn-primary font-weight-bold" onclick="window.print();">Print Order Details</button>
                                                                         </div>
                                                                     </div>
                                                                 </div>

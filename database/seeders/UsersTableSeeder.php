@@ -305,8 +305,9 @@ class UsersTableSeeder extends Seeder
              'boutique_id'=> $boutique1->id,
 
         ]);
-          $cmd1->produits()->attach([ 1 =>['quantite'=>5], 2=>['quantite'=>4] ]);
-          $cmd2->produits()->attach([ 1 =>['quantite'=>4], 2=>['quantite'=>4] ]);
+          $cmd1->produits()->attach([ 1 =>['quantite'=>1], 2=>['quantite'=>4] ]);
+          $cmd2->produits()->attach([ 3 =>['quantite'=>4], 2=>['quantite'=>6] ]);
+          $cmd3->produits()->attach([ 2 =>['quantite'=>9], 1=>['quantite'=>5] ]);
         //   $cmd3->produits()->attach([ 50 =>['quantite'=>5], 39=>['quantite'=>4] ]);
 
 }}
