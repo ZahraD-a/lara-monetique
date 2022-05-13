@@ -345,7 +345,7 @@
                                                                 <button type="submit"
                                                                     class="btn btn-label-brand btn-bold">Save
                                                                     changes</button>
-                                                                <a href=""><button class="btn btn-default btn-close "
+                                                                <a  ><button class="btn btn-default btn-close "
                                                                         class="btn btn-clean btn-bold">Cancel</a>
                                                             </div>
                                                         </div>
@@ -451,7 +451,7 @@
                                         <div class="col-lg-9 col-xl-6">
                                             <button type="submit" class="btn btn-label-brand btn-bold">Save
                                                 changes</button>
-                                            <a href="#" class="btn btn-clean btn-bold">Cancel</a>
+                                            {{-- <a  class="btn btn-clean btn-bold">Cancel</a> --}}
                                         </div>
                                     </div>
                                 </div>

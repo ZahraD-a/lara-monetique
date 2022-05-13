@@ -20,25 +20,22 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-
+        //admin
         $user1=User::create([
             'name'=> 'ali Belhaj',
             'type'=> 'admin superieur',
             'email'=> 'adminAli@gmail.com',
             'password'=> bcrypt('1234'),
         ]);
-        $user2=User::create([
-            'name'=> 'zahra daoui',
-            'type'=> 'etudiant',
-            'email'=> 'zahradaoui@gmail.com',
-            'password'=> bcrypt('0000'),
-        ]);
+        //boutique users
         $user3=User::create([
             'name'=> 'said motawakil',
             'type'=> 'admin boutique',
             'email'=> 'saidmotawakil@gmail.com',
             'password'=> bcrypt('0000'),
         ]);
+
+
         $user4=User::create([
             'name'=> 'omar maeoli',
             'type'=> 'user boutique',
@@ -51,6 +48,14 @@ class UsersTableSeeder extends Seeder
             'email'=> 'ahmed@gmail.com',
             'password'=> bcrypt('9000'),
         ]);
+
+        $user2=User::create([
+            'name'=> 'zahra daoui',
+            'type'=> 'etudiant',
+            'email'=> 'zahradaoui@gmail.com',
+            'password'=> bcrypt('0000'),
+        ]);
+
 
         $boutique1=Boutique::create([
             'name'=> 'Macdonald',
