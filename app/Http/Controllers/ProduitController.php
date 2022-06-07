@@ -13,7 +13,7 @@ class ProduitController extends Controller
     public function index()
     {
        $produits = DB::select('select * from produits');
-       return view('form.produit', ['produits' => $produits]);
+       return view('exercice', ['produits' => $produits]);
     }
 
     public function create()

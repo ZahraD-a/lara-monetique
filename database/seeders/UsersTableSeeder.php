@@ -20,18 +20,24 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        $user8=User::create([
+            'name'=> 'jammaa',
+            'type'=> 'user',
+            'email'=> 'HassanJamaa@gmail.com',
+            'password'=> bcrypt('12890'),
+        ]);
         //admin
         $user1=User::create([
             'name'=> 'ali Belhaj',
             'type'=> 'admin superieur',
-            'email'=> 'adminAli@gmail.com',
+            'email'=> 'HassanAdmin@gmail.com',
             'password'=> bcrypt('1234'),
         ]);
         //boutique users
         $user3=User::create([
             'name'=> 'said motawakil',
             'type'=> 'admin boutique',
-            'email'=> 'saidmotawakil@gmail.com',
+            'email'=> 'saidAdminB@gmail.com',
             'password'=> bcrypt('0000'),
         ]);
 
@@ -39,7 +45,7 @@ class UsersTableSeeder extends Seeder
         $user4=User::create([
             'name'=> 'omar maeoli',
             'type'=> 'user boutique',
-            'email'=> 'omarmol@gmail.com',
+            'email'=> 'omarmolUser@gmail.com',
             'password'=> bcrypt('04500'),
         ]);
         $user5=User::create([
@@ -289,7 +295,7 @@ class UsersTableSeeder extends Seeder
         $fact4=Facture::create([
             'reference'=> 'fa-68627 DF',
             'dateFact'=>'2022-02-20',
-            'montant'=>10000.88,
+            'montant'=>18800.88,
             'status'=>'validée',
              'boutique_id'=> $boutique1->id,
 
@@ -297,7 +303,7 @@ class UsersTableSeeder extends Seeder
         $fact5=Facture::create([
             'reference'=> 'fa-23117 DF',
             'dateFact'=>'2022-4-20',
-            'montant'=>10000.88,
+            'montant'=>1670.88,
             'status'=>'validée',
              'boutique_id'=> $boutique1->id,
 
@@ -310,9 +316,10 @@ class UsersTableSeeder extends Seeder
              'boutique_id'=> $boutique1->id,
 
         ]);
-          $cmd1->produits()->attach([ 1 =>['quantite'=>1], 2=>['quantite'=>4] ]);
-          $cmd2->produits()->attach([ 3 =>['quantite'=>4], 2=>['quantite'=>6] ]);
-          $cmd3->produits()->attach([ 2 =>['quantite'=>9], 1=>['quantite'=>5] ]);
-        //   $cmd3->produits()->attach([ 50 =>['quantite'=>5], 39=>['quantite'=>4] ]);
+        //   $cmd1->produits()->attach([ 1 =>['quantite'=>1], 2=>['quantite'=>4] ]);
+        //   $cmd2->produits()->attach([ 3 =>['quantite'=>4], 2=>['quantite'=>6] ]);
+        //   $cmd3->produits()->attach([ 2 =>['quantite'=>9], 1=>['quantite'=>5] ]);
+
+          //   $cmd3->produits()->attach([ 50 =>['quantite'=>5], 39=>['quantite'=>4] ]);
 
 }}

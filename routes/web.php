@@ -133,6 +133,8 @@ Route::get('transaction/detail/{etudiant}', [App\Http\Controllers\TransactionCon
  Route::post('etudiantupdate/update/{id}', [App\Http\Controllers\EtudiantController::class, 'update'])->name('etudiantupdate');
 //////////////////////////////////Boutique transaction//////////////////
 
+Route::get('boutique/users/{boutique}', [App\Http\Controllers\BoutiqueController::class, 'boutique_users'])->name('boutique/users');
+
 Route::get('boutique/transaction/{boutique}', [App\Http\Controllers\BoutiqueController::class, 'show'])->name('boutique-transaction');
 Route::get('deleteTrans/destroy/{id}', [App\Http\Controllers\BoutiqueController::class, 'destroy'])->name('deleteTrans/destroy/{id}');
 //////////////////////FACTURES/////////////////////////

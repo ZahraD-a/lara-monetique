@@ -137,7 +137,7 @@
                                 </span>
                                 <div class="d-flex flex-column">
                                     <span class="text-dark-75 font-weight-bolder font-size-sm">Boutique Users</span>
-                                    <a href="form/users" class="text-primary font-weight-bolder">View</a>
+                                    <a href="boutique/users" class="text-primary font-weight-bolder">View</a>
                                 </div>
                             </div>
                             <!--end: Item-->
@@ -216,12 +216,12 @@
                                                     src="/media/cc0-images/grapefruit-slice-332-332.jpg"
                                                     alt="Grapefruit slice atop a pile of other slices"></span>								</div>
                                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg"> {{$user->name}}</span>
+                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg"> {{$user->pivot->name}}</span>
                                         <span class="text-muted font-weight-bold"></span>
                                     </td>
                                     <td>
                                         <span
-                                            class="text-primary font-weight-bolder d-block font-size-lg"> </span>
+                                            class="text-primary font-weight-bolder d-block font-size-lg"> {{ auth()->user()->email}} </span>
                                         <span class="text-muted font-weight-bold"> </span>
                                     </td>
                                     <td>

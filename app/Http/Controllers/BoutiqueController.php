@@ -21,6 +21,12 @@ class BoutiqueController extends Controller
 
     }
 
+
+    public function boutique_users(Boutique $boutique)
+    {
+        return view('Admin.boutique.boutiquSuser', ['boutique' => $boutique]);
+
+    }
     public function AdminBoutique()
     {
         $boutiques = DB::select('select * from boutiques');

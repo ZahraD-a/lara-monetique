@@ -41,13 +41,7 @@
                             <td data-field="Status" class="kt-datatable__cell"><span style="width: 110px;">
                                       <button class="kt-badge  kt-badge--primary kt-badge--inline kt-badge--pill" id="btn">{{ $item->status }}
                                         </button>
-                                        <span class="svg-icon svg-icon-primary svg-icon-2x"><!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/General/Settings#3.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24"/>
-                                                <rect fill="#000000" opacity="0.3" x="2" y="6" width="21" height="12" rx="6"/>
-                                                <circle fill="#000000" cx="17" cy="12" r="4"/>
-                                            </g>
-                                        </svg><!--end::Svg Icon--></span>      </td>
+                                             </td>
 
 
                         </tr>
